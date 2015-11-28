@@ -26,14 +26,11 @@ NEW = function(constructor, args) {
 };
 
 INSTANCEOF = function(obj, constructor) {
-  // 
-  if(obj.__proto__ === constructor.prototype){
-    return true;
-  }
-  else if(obj.__proto__){
-    return INSTANCEOF(obj.__proto__, constructor);
-  }
-  else {
-    return false;
-  }
+	if(obj.__proto__ === constructor.prototype){
+		return true;
+	}
+	else if(obj.__proto__){
+		return INSTANCEOF(obj.__proto__, constructor);
+	}
+	return false;
 };
